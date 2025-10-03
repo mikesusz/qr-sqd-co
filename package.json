@@ -1,0 +1,15 @@
+{
+  "name": "qr-sqd-co",
+  "version": "1.0.0",
+  "description": "A simple QR code generator using qrcode.js",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
