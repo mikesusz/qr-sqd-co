@@ -119,8 +119,7 @@ button:hover {
 	margin-top: var(--input-padding);
 	padding: var(--vertical-spacing);
 	border-radius: var(--panel-radius);
-	background: #fafafa;
-	border: 1px solid rgba(0, 0, 0, 0.03);
+	border: 1px solid var(--panel-border);
 }
 
 #qrSizeSlider {
@@ -141,11 +140,11 @@ button:hover {
 
 .reset-btn {
 	background: transparent;
-	border: 1px solid #bbb;
+	border: 1px solid var(--panel-border);
 	padding: 6px 10px;
 	border-radius: 4px;
 	cursor: pointer;
-	color: #333;
+	color: var(--muted-text);
 }
 
 .reset-btn:hover {
