@@ -123,6 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		// if the controls were closed -> reset to default
 		if (!shown) {
 			clampAndSync(DEFAULT_SIZE);
+			// if user already generated and the main text hasn't changed since then,
+			// clear the dirty state so the image isn't shown as "out of sync"
+			if (hasGenerated && input && input.value.trim() === lastGeneratedText) {
+				setDirty(false);
+			}
 		}
 	});
 
