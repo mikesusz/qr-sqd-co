@@ -31,10 +31,10 @@
 				<!-- new editable size input (allows non-8 increments) -->
 				<div class="control-row">
 					<label for="qrSizeText" class="small-label">Exact size (px)</label>
-					<input id="qrSizeText" type="number" min="1" step="1" value="128" />
+					<input id="qrSizeText" type="number" min="1" step="1" value="128" aria-describedby="qrSizeHint" />
 				</div>
 
-				<div class="hint">this adjusts the size of the square image that is generated</div>
+				<div id="qrSizeHint" class="hint">this adjusts the size of the square image that is generated</div>
 
 				<!-- reset button -->
 				<div class="control-row">
