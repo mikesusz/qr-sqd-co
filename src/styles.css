@@ -23,7 +23,7 @@ h1 {
 .container {
 	max-width: 600px;
 	margin: 0 auto;
-	padding: calc(var(--vertical-spacing) * 1);
+	padding: var(--vertical-spacing);
 	box-sizing: content-box;
 	border-radius: var(--panel-radius);
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
