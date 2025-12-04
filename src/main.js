@@ -229,6 +229,9 @@ document.addEventListener('DOMContentLoaded', () => {
 			text,
 			width: size,
 			height: size,
+			colorDark: "#000000",
+			colorLight: "#ffffff",
+			correctLevel: QRCode.CorrectLevel.H,
 		});
 
 		// update state / reset button text
