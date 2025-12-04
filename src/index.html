@@ -1,22 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="color-scheme" content="light dark" />
-    <title>QR Code Generator</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="qrcode.js"></script>
-    <script src="main.js" defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="color-scheme" content="light dark" />
+	<title>QR Code Generator</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="qrcode.js"></script>
+	<script src="main.js" defer></script>
 </head>
+
 <body>
-    <div class="container">
-        <h1>QR Code Generator</h1>
-        <form id="qrCodeForm">
-            <input type="text" id="qrCodeInput" placeholder="Enter text or URL" />
-            <button type="submit">Generate QR Code</button>
-        </form>
-        <div id="qrCodeOutput"></div>
-    </div>
+	<div class="container">
+		<h1>QR Code Generator</h1>
+		<form id="qrCodeForm">
+			<input type="text" id="qrCodeInput" placeholder="Enter text or URL" aria-describedby="inputError" />
+			<!-- inline error message shown when submit without text -->
+			<div id="inputError" class="input-error-message hidden" role="alert" aria-live="assertive"></div>
+
+			<span id="currentSizeBadge" class="current-size-badge" aria-hidden="true">128px</span>
+			<!-- link that reveals the optional control + current size badge -->
+			<a href="#" id="toggleAdvanced" class="small-link">Show size control</a>
+
+			<!-- optional (hidden) advanced controls -->
+			<div id="advancedControls" class="hidden" aria-hidden="true">
+				<label for="qrSizeSlider" class="small-label">Image size: <span id="qrSizeValue">128</span> px</label>
+				<input id="qrSizeSlider" type="range" min="64" max="512" step="8" value="128" />
+
+				<!-- new editable size input (allows non-8 increments) -->
+				<div class="control-row">
+					<label for="qrSizeText" class="small-label">Exact size (px)</label>
+					<input id="qrSizeText" type="number" min="1" step="1" value="128" />
+				</div>
+
+				<div class="hint">this adjusts the size of the square image that is generated</div>
+
+				<!-- reset button -->
+				<div class="control-row">
+					<button type="button" id="qrResetSize" class="reset-btn">Reset to 128px</button>
+				</div>
+			</div>
+
+			<button type="submit" id="generateBtn">Generate QR Code</button>
+
+		</form>
+
+		<div id="qrCodeOutput" aria-live="polite"></div>
+	</div>
 </body>
+
 </html>
