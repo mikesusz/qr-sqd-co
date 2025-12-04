@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 
-	// live update from slider (8px-step)
+	// live update from slider (step value is defined in the HTML input element, e.g. <input step="8">)
 	slider?.addEventListener('input', () => {
 		const v = parseInt(slider.value, 10) || DEFAULT_SIZE;
 		// slider changes should update the exact input as well (when aligned)
